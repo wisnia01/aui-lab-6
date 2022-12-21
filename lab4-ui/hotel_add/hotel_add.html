@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Hotel</title>
+        <script type="module" src="hotel_add.js" defer="defer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Hotel</h1>
+            </header>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="../index.html">Main</a></li>
+                    <li><a href="../hotel_list/hotel_list.html">Hotels</a></li>
+                    <li><a href="../room_list/room_list.html">Rooms</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2>Add hotel info</h2></header>
+                    <form class="hotel__form" id="infoForm">
+                        <label for="name">Name:</label>
+                        <input class="ui-control ui-input" id="name" name="name"/>
+                        <br>
+                        <label for="age">Age:</label>
+                        <input class="ui-control ui-input" id="age" name="age"/>
+                        <br>
+                        <label for="phone">Phone Number:</label>
+                        <input class="ui-control ui-input" id="phone" name="phone"/>
+                        <br>
+                        <input class="ui-control ui-button" type="submit" name="Update"/>
+                    </form>
+                </article>
+            </section>
+
+            <footer class="footer">
+                <p>:)</p>
+            </footer>
+        </div>
+    </body>
+</html>

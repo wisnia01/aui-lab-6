@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Farmazone</title>
+        <script type="module" src="hotel_edit.js" defer="defer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Farmazone</h1>
+            </header>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="../index.html">main</a></li>
+                    <li><a href="../hotel_list/hotel_list.html">hotels</a></li>
+                    <li><a href="../room_list/room_list.html">Room</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2 id="name">name</h2><h2> Edit info</h2></header>
+                    <form class="hotel__form" id="infoForm">
+                        <label for="age">Age:</label>
+                        <input class="ui-control ui-input" id="age" name="age"/>
+                        <br>
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input class="ui-control ui-input" id="phoneNumber" name="phoneNumber"/>
+                        <br>
+                        <input class="ui-control ui-button" type="submit" name="Update"/>
+                    </form>
+                </article>
+            </section>
+
+            <footer class="footer">
+                <p>:)</p>
+            </footer>
+        </div>
+    </body>
+</html>

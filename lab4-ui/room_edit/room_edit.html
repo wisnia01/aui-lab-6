@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Hotel</title>
+        <script type="module" src="room_edit.js" defer="defer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Hotel</h1>
+            </header>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="../index.html">main</a></li>
+                    <li><a href="../hotel_list/hotel_list.html">hotels</a></li>
+                    <li><a href="../room_list/room_list.html">rooms</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2>Edit room info</h2></header>
+                    <form class="room__form" id="infoForm">
+                        <label for="name">Name:</label>
+                        <input class="ui-control ui-input" id="name" name="name"/>
+                        <br>
+                        <label for="area">Area:</label>
+                        <textarea class="ui-control" id="area" name="area" type="number"></textarea>
+                        <br>
+                        <input class="ui-control ui-button" type="submit" name="Update"/>
+                    </form>
+                </article>
+            </section>
+
+            <footer class="footer">
+                <p>:)</p>
+            </footer>
+        </div>
+    </body>
+</html>

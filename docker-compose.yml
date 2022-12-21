@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  m1:
+    image: nginx:1.22.1
+    volumes:
+      # - ./lab4-ui:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+    - 8080:80
+  m2:
+    image: aui-app-image
+
+  frontend:
+    image: nginx:1.22.1
+    volumes:
+      - ./lab4-ui:/usr/share/nginx/html

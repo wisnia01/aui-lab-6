@@ -3,8 +3,10 @@ import {getBackendUrl} from '../js/config.js';
 
 window.addEventListener('load', () => {
     const infoForm = document.getElementById('infoForm');
+    const portraitForm = document.getElementById('portraitForm');
 
     infoForm.addEventListener('submit', event => updateInfoAction(event));
+    portraitForm.addEventListener('submit', event => uploadPortraitAction(event));
 });
 
 /**
@@ -31,4 +33,25 @@ function updateInfoAction(event) {
     xhttp.setRequestHeader('Content-Type', 'application/json');
 
     xhttp.send(JSON.stringify(request));
+}
+function uploadPortraitAction(event) {
+    event.preventDefault();
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("PUT", getBackendUrl() + '/api/hotels/' +  'portrait', true);
+
+    let request = new FormData();
+    request.append("portrait", document.getElementById('portrait').files[0]);
+    request.append("description", document.getElementById('description').value);
+    request.append("portraitName", document.getElementById('portraitName').value);
+
+    const request2 = {
+        "portrait": document.getElementById('portrait').files[0],
+        "description": document.getElementById('description').value,
+        "portraitName": document.getElementById('portraitName').value
+    };
+
+
+    xhttp.send(request);
+
 }

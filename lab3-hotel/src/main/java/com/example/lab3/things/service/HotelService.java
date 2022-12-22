@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,4 +45,16 @@ public class HotelService {
         repository.deleteById(name);
         eventRepository.delete(hotel);
     }
+//    @Transactional
+//    public void updatePortrait(String id, InputStream is) {
+//        repository.findById(id).ifPresent(hotel -> {
+//            try {
+//                hotel.setPortrait(is.readAllBytes());
+////                repository.update(character);
+//            } catch (IOException ex) {
+//                throw new IllegalStateException(ex);
+//            }
+//        });
+//    }
+
 }

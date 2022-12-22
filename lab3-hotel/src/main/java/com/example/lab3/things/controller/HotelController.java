@@ -4,10 +4,18 @@ import com.example.lab3.things.dto.*;
 import com.example.lab3.things.enitity.Hotel;
 import com.example.lab3.things.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.Optional;
 
 @RestController
@@ -63,4 +71,22 @@ public class HotelController {
             return ResponseEntity.notFound().build();
         }
     }
+    @PutMapping(value = "portrait", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public void updateHotelPortrait(@RequestParam("portrait") MultipartFile portrait,
+                                    @RequestParam("description") String description,
+                                    @RequestParam("portraitName") String portraitName ) throws IOException, SQLException, ClassNotFoundException {
+
+        InputStream inputStream = portrait.getInputStream();
+        BufferedImage bufferedImage = ImageIO.read(inputStream);
+        File outputFile = new File("./zdjecia/" + portraitName + ".png");
+        ImageIO.write(bufferedImage, "png", outputFile);
+        System.out.println(description);
+        System.out.println(portraitName);
+
+        new SendVariableToDB().sendToDB(description);
+
+
+
+    }
+
 }
